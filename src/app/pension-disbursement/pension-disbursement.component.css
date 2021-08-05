@@ -1,0 +1,57 @@
+body {
+	
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin: 0;
+	color: #666;
+	min-height: 100%;
+	background: url("https://res.cloudinary.com/display/image/upload/v1627990050/pensionerDetailBg_z5mb9o.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	height: 100%;
+	overflow:hidden;
+}
+
+.container {
+	background-color: white;
+	max-width: 340px;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+	padding: 1%;
+	border-radius: 5px;
+	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+	text-align: center;
+}
+
+.left {
+    background: white;
+    height: calc(100% - 40px);
+    top: 20px;
+    padding: 1%;
+    width: 50%;
+    float: left;
+    padding-bottom:10%;
+  }
+
+  .right {
+    background: #474A59;
+    box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+    color: #F1F1F2;
+    width: 50%;
+    float:right;
+    padding: 1%;
+  }
+
+  .box-header {
+	background-color: #0a0222;
+	border-radius: 5px 5px 0 0;
+    margin: 0%;
+    padding:0%;
+    color: #FFFFFF;
+    size: 20px;
+    margin-bottom:5%;
+}

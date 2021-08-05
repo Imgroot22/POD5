@@ -1,0 +1,30 @@
+body {
+	
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin: 0;
+	color: #666;
+	min-height: 100%;
+	background: url("https://res.cloudinary.com/display/image/upload/v1628089672/image_nsjgxx.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	height: 100%;
+	overflow:hidden;
+}
+
+.container {
+	padding-top: 5%;
+    padding-bottom: 8%;
+    padding-left: 5%;
+}
+
+.box-design{
+    border-radius: 5%;
+}
+
+.form-group{
+    margin: 2%;
+}

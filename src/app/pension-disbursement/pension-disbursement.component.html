@@ -1,1 +1,61 @@
-<p>pension-disbursement works!</p>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <title>Pension Management</title>
+</head>
+
+<body>
+    <app-header></app-header>
+    <section style="padding: 5%;margin-bottom: 5%;">
+        <div class="container left">
+            <div class="box-header-container">
+                <div class="box-header">
+                    <h2>Pensioner Details</h2>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pensioner Name:</label>
+                <p class="form-control is-valid">{{pensionDetail.name}}</p>
+            </div>
+
+            <div class="form-group">
+                <label>Pensioner PAN:</label>
+                <p class="form-control is-valid">{{pensionDetail.pan}}</p>
+            </div>
+            <div class="form-group">
+                <label>Pension Type:</label>
+                <p class="form-control is-valid">{{pensionDetail.pensionType}}</p>
+            </div>
+            <div class="form-group">
+                <label>Pensioner DOB:</label>
+                <p class="form-control is-valid">{{pensionDetail.dateOfBirth}}</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="box-header-container">
+                <div class="box-header">
+                    <h2>Calculated Pension</h2>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pension Amount:</label>
+                <p class="form-control">{{pensionDetail.pensionAmount}}</p>
+            </div>
+            <form method="GET" (submit)="onSubmit()">
+                <input id="verifyBtn" name="verify" class="btn btn-dark" style="cursor: grab;" type="submit"
+                    value="Disburse Pension" />
+            </form>
+        </div>
+    </section>
+</body>
+<app-footer></app-footer>
+
+</html>
