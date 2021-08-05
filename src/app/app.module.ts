@@ -10,6 +10,10 @@ import { PensionDisbursementComponent } from './pension-disbursement/pension-dis
 import { PensionInputComponent } from './pension-input/pension-input.component';
 import { SuccessComponent } from './success/success.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,42 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BackButtonDisableModule.forRoot({
+      preserveScrollPosition: true
+    }),
+    RouterModule.forRoot(
+      [
+        {
+          path: 'login',
+          component: LoginComponent
+        },
+        {
+          path: 'persionDisbursement',
+          component: PensionDisbursementComponent
+        },
+        {
+          path: 'persionerInput',
+          component: PensionInputComponent
+        },
+        {
+          path: 'success',
+          component: SuccessComponent
+        },
+        {
+          path: '',
+          redirectTo: '/login',
+          pathMatch: 'full'
+        },
+        {
+          path: '**',
+          component: ErrorComponent
+        }
+      ]
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

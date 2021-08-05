@@ -6,11 +6,11 @@ import { AuthenticateService } from '../authenticate.service';
 import { PensionManagementService, SharedService } from '../pension-management.service';
 
 @Component({
-  selector: 'app-persioner-input',
-  templateUrl: './persioner-input.component.html',
-  styleUrls: ['./persioner-input.component.css']
+  selector: 'app-pensioner-input',
+  templateUrl: './pension-input.component.html',
+  styleUrls: ['./pension-input.component.css']
 })
-export class PersionerInputComponent implements OnInit {
+export class PensionInputComponent implements OnInit {
 
   constructor(private http: HttpClient, private pensionService: PensionManagementService, private router: Router, private authService: AuthenticateService, private shareData: SharedService) { }
   token: string = '';

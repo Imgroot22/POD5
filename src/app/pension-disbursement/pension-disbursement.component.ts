@@ -20,11 +20,11 @@ import { AuthenticateService } from '../authenticate.service';
 import { SharedService } from '../pension-management.service';
 
 @Component({
-  selector: 'app-persion-disbursement',
-  templateUrl: './persion-disbursement.component.html',
-  styleUrls: ['./persion-disbursement.component.css']
+  selector: 'app-pension-disbursement',
+  templateUrl: './pension-disbursement.component.html',
+  styleUrls: ['./pension-disbursement.component.css']
 })
-export class PersionDisbursementComponent implements OnInit {
+export class PensionDisbursementComponent implements OnInit {
   pensionDetail: any;
   constructor(private shareData: SharedService, private router: Router, private authService: AuthenticateService) {
     console.log(this.shareData.getUserData());

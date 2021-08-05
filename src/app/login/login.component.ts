@@ -1,19 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -27,7 +11,23 @@ import { AuthenticateService } from '../authenticate.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) { }
+  token: any = sessionStorage.getItem('token');
+  constructor(private http: HttpClient, private router: Router, private authService: AuthenticateService) {
+    let tok = sessionStorage.getItem('token');
+    if (tok != null)
+      this.token = tok;
+    console.log(tok);
+    this.authService.validate(this.token).subscribe((response: any) => {
+      console.log(response);
+      let message = response.message;
+      console.log(message);
+      if (message == 'Success') {
+        this.router.navigate(['persionerInput']);
+      }
+    }, (error: any) => {
+      this.router.navigate(['']);
+    });
+  }
 
   ngOnInit(): void {
     sessionStorage.setItem('token', '');
