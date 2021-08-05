@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { PensionDisbursementComponent } from './pension-disbursement/pension-disbursement.component';
 import { PensionInputComponent } from './pension-input/pension-input.component';
 import { SuccessComponent } from './success/success.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SuccessComponent } from './success/success.component';
     LoginComponent,
     PensionDisbursementComponent,
     PensionInputComponent,
-    SuccessComponent
+    SuccessComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
