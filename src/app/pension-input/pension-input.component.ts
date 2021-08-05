@@ -50,7 +50,7 @@ export class PensionInputComponent implements OnInit {
   }
 
   onSubmit() {
-    this.invalidCredentials = true;
+    this.invalidCredentials = false;
 
     // console.log(this.PersionerInput.value.username);
     // console.log(this.PersionerInput.value.dateOfBirth);
@@ -70,7 +70,8 @@ export class PensionInputComponent implements OnInit {
         this.router.navigate(['persionDisbursement']);
       }
     }, (error: any) => {
-      alert("invalid input");
+      // alert("invalid input");
+      this.invalidCredentials = true;
       console.log(error);
     });
   }
