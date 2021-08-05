@@ -1,1 +1,62 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pension Management Portal</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" style="align-items: center;padding-bottom: 7%;">
+        <h1 id="title">Pension Management Portal</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="login-box">
+                <div class="box-header-container">
+                    <div class="box-header">
+                        <h2>Log In</h2>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input name="username" type="text" class="form-control" placeholder="Username" required="required"
+                        autofocus="autofocus" formControlName="userId">
+                </div>
+                <div class="form-group">
+                    <input name="password" type="password" class="form-control" placeholder="Password"
+                        required="required" formControlName="password">
+                </div>
+                <div class="error" *ngIf="invalidCredentials">
+                    Invalid User Id/ Password.
+
+                </div>
+                <div class="form-group" style="margin-top: 25px; margin-bottom: 100px;">
+                    <input id="submitBtn" name="submit" class="button-design" style="cursor: pointer;" type="submit"
+                        value="Login" formmethod="post">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#logo').addClass('animated fadeInDown');
+        $("input:text:visible:first").focus();
+    });
+    $('#username').focus(function () {
+        $('label[for="username"]').addClass('selected');
+    });
+    $('#username').blur(function () {
+        $('label[for="username"]').removeClass('selected');
+    });
+    $('#password').focus(function () {
+        $('label[for="password"]').addClass('selected');
+    });
+    $('#password').blur(function () {
+        $('label[for="password"]').removeClass('selected');
+    });
+</script>
+
+</html>
