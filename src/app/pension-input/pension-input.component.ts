@@ -50,16 +50,17 @@ export class PensionInputComponent implements OnInit {
   }
 
   onSubmit() {
-    this.invalidCredentials = false;
+    this.invalidCredentials = true;
 
-    console.log(this.PersionerInput.value.username);
-    console.log(this.PersionerInput.value.dateOfBirth);
-    console.log(this.PersionerInput.value.pan);
-    console.log(this.PersionerInput.value.aadharNumber);
-    console.log();
-    console.log(this.PersionerInput.value);
-
+    // console.log(this.PersionerInput.value.username);
+    // console.log(this.PersionerInput.value.dateOfBirth);
+    // console.log(this.PersionerInput.value.pan);
+    // console.log(this.PersionerInput.value.aadharNumber);
+    // console.log();
+    // console.log(this.PersionerInput.value);
     // this.router.navigate(['']);
+
+
     this.pensionService.getData(this.PersionerInput.value).subscribe((response: any) => {
       console.log(response);
       if (response == null) {
@@ -72,6 +73,5 @@ export class PensionInputComponent implements OnInit {
       alert("invalid input");
       console.log(error);
     });
-
   }
 }

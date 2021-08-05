@@ -29,16 +29,18 @@
                 </div>
                 <div class="right">
                     <div style="padding:15%;margin-top:10%">
-                        <h1 class="login">Congratulations!</h1>
+                        <h1 class="login">{{msg}}</h1>
                         <p>
-                            Amount has been disbursed to the account.
+                            {{info}}
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <div>
+        <button (click)="onClicked()">Go Back to Pensioner Input</button>
+    </div>
 </body>
 <app-footer></app-footer>
 

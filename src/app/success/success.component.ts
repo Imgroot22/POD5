@@ -10,6 +10,8 @@ import { PensionManagementService } from '../pension-management.service';
 })
 export class SuccessComponent implements OnInit {
 
+  msg: string = "sdfg";
+  info: string = "sdfg";
   constructor(private pensionService: PensionManagementService, private router: Router, private authService: AuthenticateService) { }
   token: string = '';
   ngOnInit(): void {
@@ -28,6 +30,20 @@ export class SuccessComponent implements OnInit {
     }, (error: any) => {
       this.router.navigate(['']);
     });
+    this.pensionService.getConformation().subscribe((data: any) => {
+      console.log(data);
+      let m = data.msg;
+      let inf = data.info;
+      if (m) {
+        this.msg = m;
+      }
+      if (inf) {
+        this.info = inf;
+      }
+    });
+  }
+  onClicked() {
+    this.router.navigate(['persionerInput']);
   }
 
 }
