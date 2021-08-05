@@ -48,6 +48,22 @@ export class PensionInputComponent implements OnInit {
   submit() {
     console.log(this.PersionerInput.value);
   }
+  
+  checkName($event:any){
+    var regName = new RegExp('^[A-Z a-z]{3,15}$');
+    this.nameCheck = this.PersionerInput.value.username.test(regName);
+    this.nameCheck = !this.nameCheck;
+    alert(this.nameCheck);
+    
+  }
+
+  checkAadhar($event:any){
+    
+    let regAadhar = new RegExp('^[0-9]{12}$');
+    this.aadharCheck = this.PersionerInput.value.aadharNumber.test(regAadhar);
+    this.aadharCheck = !this.aadharCheck;
+    alert(this.aadharCheck);
+  }
 
   onSubmit() {
     this.invalidCredentials = false;
