@@ -12,8 +12,9 @@ import { PensionManagementService, SharedService } from '../pension-management.s
 })
 export class PensionInputComponent implements OnInit {
 
-  constructor(private http: HttpClient, private pensionService: PensionManagementService, private router: Router, private authService: AuthenticateService, private shareData: SharedService) { }
   token: string = '';
+  invalidCredentials: boolean = false;
+  constructor(private http: HttpClient, private pensionService: PensionManagementService, private router: Router, private authService: AuthenticateService, private shareData: SharedService) { }
   ngOnInit(): void {
     let tok = sessionStorage.getItem('token');
     if (tok != null)
@@ -32,7 +33,6 @@ export class PensionInputComponent implements OnInit {
     });
   }
 
-  invalidCredentials: boolean = false;
   PersionerInput = new FormGroup({
     username: new FormControl(''),
     dateOfBirth: new FormControl(''),
@@ -64,7 +64,8 @@ export class PensionInputComponent implements OnInit {
     this.pensionService.getData(this.PersionerInput.value).subscribe((response: any) => {
       console.log(response);
       if (response == null) {
-        alert("invalid input");
+        this.invalidCredentials = true;
+        // alert("invalid input");
       } else {
         this.shareData.setUserData(response);
         this.router.navigate(['persionDisbursement']);

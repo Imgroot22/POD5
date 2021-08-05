@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     // let validateUrl: string = "http://localhost:8080/user/getuser?userid={0}";
     // validateUrl = validateUrl.replace("{0}", this.loginForm.value.userId);
     this.authService.fetchAuthenticationToken({ "userid": this.loginForm.value.userId, "password": this.loginForm.value.password }).subscribe((token: any) => {
-      console.log(token);
+      // console.log(token);
       let t = token.token;
       sessionStorage.setItem('token', t)
       // btoa(this.loginForm.value.userId + ':' + this.loginForm.value.password));
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['persionerInput']);
     }, (error: any) => {
       this.invalidCredentials = true;
-      console.log(error);
+      // console.log(error);
     });
   }
 }
